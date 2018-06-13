@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<article class="post-container post-container--single">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="{{ page.date | date: "%-d %b %Y" }}" class="post-meta__date date">{{ page.date | date: "%-d %b %Y" }}</time> &#8226;<span class="post-meta__tags">Categorías: {% for cat in page.categories %}<a href="{{ site.url }}/categories/#{{ cat }}">{{ cat }}{% if forloop.last == false %} - {% endif %}{% endfor %}</a></span><span class="post-meta__tags">Etiquetas: {% for tag in page.tags %}<a href="{{ site.url }}/tags/#{{ tag }}">{{ tag }}</a>{% if forloop.last == false %} - {% endif %}{% endfor %}</span>
+    </div>
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+
+  {% if page.hidden != true %}<p class="keywords">Palabras clave: {% for key in page.keywords %}{{ key }}, {% endfor %}</p>{% include disqus.html %}{% endif %}
+
+  <section class="post">
+    {{ content }}
+  <div align="right">  <hr class="share-divider">
+<a href="https://www.facebook.com/sharer.php?u={{ site.url }}{{ page.url}}&title={{page.title}}"  rel="nofollow" title="Compartir en Facebook" target="_blank"><i class="icon icon-social-facebook medium-icon"></i></a>
+<a href="https://twitter.com/intent/tweet?text=Ver: {{page.title}}&url={{ site.url }}{{ page.url}}&via={{site.author.twitter_username}}&related={{site.author.twitter_username}}" rel="nofollow" title="Compartir en Twitter" target="_blank"><i class="icon icon-social-twitter medium-icon"></i></a>
+<a href="https://plus.google.com/share?url={{ site.url }}{{ page.url}}"  title="Compartir en Google+" rel="nofollow" target="_blank"><i class="icon icon-social-google-plus medium-icon"></i></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url}}&title={{ page.title }}"  title="Compartir en LinkedIn" rel="nofollow" target="_blank"><i class="icon icon-social-linkedin medium-icon"></i></a>
+<a href="mailto:?subject={{ page.title }}&body=Hey! Please check this article out. It may be interesting for you. {{ site.url }}{{ page.url}}"  title="Share by e-mail" target="_blank"><i class="icon icon-mail medium-icon"></i></a>
+</div></section>
+<h4>&nbsp;</h4>
+  {% if page.comments != false and site.disqus_shortname %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %}
+</article>
+{% if page.comments != false %}{% include disqus.html %}{% endif %}
