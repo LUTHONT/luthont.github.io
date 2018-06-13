@@ -1,18 +1,18 @@
 # Site settings
-title: Mauro Barbosa (mauroba)
-description: Porque el conocimiento ocupa espacio. Aquí encontrarán mis experiencias con la tecnología. ¿Diario de un Nerd? ¡Adelante, pasen!
-url: 'http://mauroba.tk'
+title: LUTHONT
+description: El conocimiento es libre.
+url: 'http://luthont.tk'
 baseurl: ''
 google_analytics: 'UA-97096903-1'
 # disqus_shortname: 'mauroba'
 
 author:
-  name: 'Mauro Barbosa'
-  email: mauroba@gmail.com
-  twitter_username: MauroDBarbosa
+  name: 'Leonardo'
+  email: leonardomalvaezvazquez@gmail.com
+  twitter_username: LUTHONT
   # facebook_username: joshgerdes
   # github_username:  joshgerdes
-  linkedin_username:  maurodbarbosa
+  linkedin_username:  LUTHONT
 
 defaults:
   -
